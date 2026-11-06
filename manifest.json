@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "IITKGP ERP Feedback Autofiller",
+  "version": "2.0",
+  "description": "Popup + on-page autofill for IIT KGP ERP feedback forms.",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["*://*.iitkgp.ac.in/*"],
+  "action": {
+    "default_title": "ERP Feedback Autofiller",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.iitkgp.ac.in/*"],
+      "js": ["content.js"],
+      "all_frames": true
+    }
+  ]
+}

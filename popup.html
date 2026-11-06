@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 310px;
+      margin: 0;
+      padding: 14px;
+      background: #0f172a;
+      color: #f8fafc;
+      font-family: system-ui, -apple-system, sans-serif;
+      font-size: 13px;
+    }
+    h3 {
+      margin: 0 0 10px 0;
+      color: #38bdf8;
+      font-size: 14px;
+    }
+    .quick-row {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+      margin-bottom: 12px;
+    }
+    .preset-btn {
+      color: white;
+      border: none;
+      padding: 6px 8px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 11px;
+      flex: 1;
+      white-space: nowrap;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 8px 10px;
+      align-items: center;
+      border-top: 1px solid #1e293b;
+      padding-top: 10px;
+      margin-bottom: 12px;
+    }
+    label {
+      color: #94a3b8;
+      font-size: 12px;
+    }
+    select {
+      background: #334155;
+      color: #f8fafc;
+      border: 1px solid #475569;
+      padding: 5px 8px;
+      border-radius: 5px;
+      font-size: 12px;
+      outline: none;
+    }
+    #apply-btn {
+      background: #4f46e5;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 12px;
+      width: 100%;
+    }
+    #status {
+      margin-top: 8px;
+      font-size: 11px;
+      color: #4ade80;
+      text-align: center;
+      min-height: 14px;
+    }
+  </style>
+</head>
+<body>
+  <h3>⚡ ERP Feedback Autofiller</h3>
+  <div class="quick-row">
+    <button class="preset-btn" data-rating="Excellent" style="background:#16a34a">Excellent</button>
+    <button class="preset-btn" data-rating="Very good" style="background:#2563eb">Very good</button>
+    <button class="preset-btn" data-rating="Good" style="background:#0d9488">Good</button>
+    <button class="preset-btn" data-rating="Fair" style="background:#d97706">Fair</button>
+    <button class="preset-btn" data-rating="Poor" style="background:#dc2626">Poor</button>
+  </div>
+
+  <div class="grid">
+    <label>Q1–10 Rating:</label>
+    <select id="rating">
+      <option value="Excellent" selected>Excellent</option>
+      <option value="Very good">Very good</option>
+      <option value="Good">Good</option>
+      <option value="Fair">Fair</option>
+      <option value="Poor">Poor</option>
+    </select>
+
+    <label>Q4 Pace:</label>
+    <select id="pace">
+      <option value="Too Fast">Too Fast</option>
+      <option value="Fast">Fast</option>
+      <option value="Just Right" selected>Just Right</option>
+      <option value="Slow">Slow</option>
+      <option value="Too Slow">Too Slow</option>
+    </select>
+
+    <label>Q13–14 Load:</label>
+    <select id="workload">
+      <option value="Very Heavy">Very Heavy</option>
+      <option value="Heavy">Heavy</option>
+      <option value="Average" selected>Average</option>
+      <option value="Light">Light</option>
+      <option value="Very Light">Very Light</option>
+    </select>
+  </div>
+
+  <button id="apply-btn">Apply Custom Selection</button>
+  <div id="status"></div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
